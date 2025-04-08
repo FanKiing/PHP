@@ -8,39 +8,36 @@
 </head>
 <body>
     <div class="container mt-5">
-        <form action="" id="imageForm" method="POST" novalidate>
-            <div class="mb-3">
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])?>" enctype="multipart/form-data" method="POST">
+            <div class="form-group">
                 <label for="id" class="form-label">ID</label>
                 <input type="text" name="id" id="id" class="form-control" required>
-                <div id="idError" class="invalid-feedback"></div>
+                <span id="idError"></span>
             </div>
-            <div class="mb-3">
+            <div class="form-group">
                 <label for="title" class="form-label">Title</label>
                 <input type="text" name="title" id="title" class="form-control" required>
-                <div id="titleError" class="invalid-feedback"></div>
+                <span id="titleError"></span>
             </div>
-            <div class="mb-3">
+            <div class="form-group">
                 <label for="category" class="form-label">Category</label>
-                <select name="category" id="category" class="form-select" required>
+                <select name="category" id="category" class="form-select">
                     <option value="" hidden>Select your category</option>
                     <option value="nature">Nature</option>
                     <option value="human">Human</option>
                     <option value="animal">Animal</option>
                 </select>
-                <div id="categoryError" class="invalid-feedback"></div>
             </div>
-            <div class="mb-3">
+            <div class="form-group">
                 <label for="message" class="form-label">Description</label>
-                <textarea name="message" id="message" class="form-control"></textarea>
-                <div id="messageError" class="invalid-feedback"></div>
+                <textarea name="message" id="message"></textarea>
             </div>
-            <div class="mb-3">
+            <div class="form-group">
                 <label for="image" class="form-label" id="image">Image</label>
-                <input type="file" name="image" id="image" class="form-control">
-                <div id="imageError" class="invalid-feedback"></div>
+                <input type="image" alt="" class="form-control" id="image"><?= $fileInfo ?><br>
             </div>
-            <button class="btn btn-primary" type="submit">Submit</button>
         </form>
+        <button class="btn btn-primary"></button>
     </div>
 </body>
 </html>
