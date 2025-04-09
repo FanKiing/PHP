@@ -1,40 +1,38 @@
+<?php
+$employes = json_decode(file_get_contents("employes.json"), true);
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Liste des Employés</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
-<body>
-    <div class="container mt-4">
-        <form action="">
-            <div class="form-group">
-                <label for="matricule" class="for-label">Matricule</label>
-                <input type="number" name="matricule" id="matricule" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="nom" class="form-label">Nom</label>
-                <input type="text" name="nom" id="nom" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" name="email" id="email" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="image" class="form-label">Image</label>
-                <input type="file" name="image" id="image" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="cv" class="form-label">CV</label>
-                <input type="file" name="cv" id="cv" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="linkedin" class="form-label">LinkedIn profile</label>
-                <input type="text" name="linkedin" id="linkedin" class="form-control" required>
-            </div>
-        </form>
-        <button class="btn btn-sm btn-info">Envoyer</button>
+<body class="bg-light p-5">
+    <div class="container">
+        <h1 class="mb-4">Liste des Employés</h1>
+        <a href="add.php" class="btn btn-primary mb-4">Ajouter un Employé</a>
+        <div class="row">
+            <?php foreach ($employes as $employe): ?>
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        <img src="<?= $employe['image'] ?>" class="card-img-top" alt="Image">
+                        <div class="card-body">
+                            <h5 class="card-title"><?= htmlspecialchars($employe['nom']) ?></h5>
+                            <p class="card-text">
+                                Matricule : <?= $employe['matricule'] ?><br>
+                                Email : <?= $employe['email'] ?><br>
+                                <a href="<?= $employe['linkedin'] ?>" target="_blank">LinkedIn</a>
+                            </p>
+                            <a href="detail.php?matricule=<?= $employe['matricule'] ?>" class="btn btn-info btn-sm">Détails</a>
+                            <a href="update.php?matricule=<?= $employe['matricule'] ?>" class="btn btn-warning btn-sm">Modifier</a>
+                            <a href="delete.php?matricule=<?= $employe['matricule'] ?>" class="btn btn-danger btn-sm">Supprimer</a>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
     </div>
 </body>
 </html>
