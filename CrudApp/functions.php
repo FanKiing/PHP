@@ -3,9 +3,9 @@ session_start();
 
 function getProducts() {
     return [
-        ["id" => 1, "intitule" => "Produit A", "prix" => 100, "image" => "images/produitA.jpg"],
-        ["id" => 2, "intitule" => "Produit B", "prix" => 150, "image" => "images/produitB.jpg"],
-        ["id" => 3, "intitule" => "Produit C", "prix" => 200, "image" => "images/produitC.jpg"]
+        ["id" => 1, "intitule" => "Produit A", "prix" => 100, "image" => "images/produit1.png"],
+        ["id" => 2, "intitule" => "Produit B", "prix" => 150, "image" => "images/produit2.png"],
+        ["id" => 3, "intitule" => "Produit C", "prix" => 200, "image" => "images/produit3.png"]
     ];
 }
 
