@@ -8,7 +8,7 @@ if (isset($_GET['add'])) {
 $products = getProducts();
 ?>
 <?php include 'Navbar.php'; ?>
-
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <h2>Produits</h2>
 <div style="display:flex; gap:20px;">
     <?php foreach ($products as $p): ?>
