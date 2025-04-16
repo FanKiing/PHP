@@ -1,0 +1,17 @@
+la table etudiants est caractérisée par : cef primary key , fulleName string ,email, lien github, filiere,image, gente string , loisires  
+créer la base de données gestionEtud 
+créer la table etudiant 
+créer une application php au niveau de htdox :
+db.php => pour établir la connection avec la base de données 
+navbar.php => un menu contenant deux links => vers index.php et vers create.php
+index.php => affiche la liste des étudiants d'une table html avec les boutons d'action edit et delete pour chaque étudiant
+                                (doit inclure navbar.php)
+create.php => un formulaire contenant (input type text pour cef et pour fullName, select pour filiere , input type file pour l'image , deux radio buttons pour la gente un groupe de checkbox pour les loisirs)
+avant d'insérer un étudiant vous devez valider les champs :
+le cef obligatoire , numérique et unique 
+le fullName obligatoire et doit pattern ^[A-Z][A-Za-z']{2,}(\s[A-Za-z']+)*$ 
+la filiére est obligatoire 
+la gente est obligatoires
+au moins deux loisirs 
+l'image doit avoir une extension valide [png , jpeg , jpg ]
+votre application doit avoir edit.php et delete.php
