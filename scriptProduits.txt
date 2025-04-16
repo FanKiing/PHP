@@ -1,0 +1,30 @@
+/*SELECT * FROM `produits` WHERE 1*/
+/* operation insert */
+/*insert into produits(ref,intitule,prix,image) values(3000,'produit1',123.52,'images/nature.png')*/  
+/*insert into produits(ref,intitule,prix,image) values(3005,'produit3',78.52,'images/flowers.png')
+****************Syntaxe générale *************************
+insert into tableName(champs,champs,...) values (val1,val2,...)*/
+/*operation select all 
+select * from produits
+**************Syntaxe générale **************
+select * from tableName
+*/
+
+/* selectionner un elet par ref */
+/*select * from produits where ref=3000
+ ***************Syntaxe générale *************
+ select from tableName where condition
+
+*/
+/* modifier un seul element 
+update produits set prix=45.20 ,image='images/mountains.png' where ref=3004
+*************Syntaxe générale **********************
+update tableName where condition
+*/
+
+/*supprimer un elet
+delete from produits where ref=3004
+delete from tableName where condition
+*/
+
+
