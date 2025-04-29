@@ -1,0 +1,4 @@
+#create table client(id_client integer primary key AUTO_INCREMENT,cin varchar(25),nom #varchar(25),prenom varchar(25),email varchar(25),password varchar(25))
+#create table typebImmo(id_type integer primary key AUTO_INCREMENT,libelle varchar(25))
+#create table immobilier(id_immo integer primary key AUTO_INCREMENT,titre varchar(25),adresse varchar(30),prixLocation float,id_type integer,foreign key(id_type) references typebImmo(id_type),desponible varchar(3))
+#create table location(id_location integer integer primary key AUTO_INCREMENT,id_immobilier integer,foreign key(id_immobilier) references immobilier(id_immo),id_client integer, foreign key(id_client) references client(id_client)
