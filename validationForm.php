@@ -24,6 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $errors["email"] = "L'email n'est pas valide.";
         }
     }
+    
 
     // Validation du mot de passe
     if (empty($_POST["password"])) {
