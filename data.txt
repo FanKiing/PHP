@@ -1,0 +1,4 @@
+100;clavier
+80;souris
+4000;ordinateur
+2000;scanner
