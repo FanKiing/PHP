@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS Stock2;
+
+use Stock2;
+
+CREATE TABLE produit(
+	Code_produit int PRIMARY key,
+    Designation VARCHAR(15),
+    prix_unitaire int,
+    stocks int,
+    image TEXT
+);
